@@ -21,3 +21,7 @@ The UI is divided into three main sections:
 - Fetching and syncing data using TanStack Query.
 
 This implementation focuses on clean structure, clarity, and extensibility.
+## Library Usage Note
+Zustand and TanStack Query are included as part of the required stack.  
+Given the limited scope and time constraints, the current implementation focuses on the core ReactFlow canvas.  
+The architecture is intentionally kept ready for integrating global state (Zustand) and server-driven data (TanStack Query) in future iterations.

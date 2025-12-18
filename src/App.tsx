@@ -1,47 +1,36 @@
+import { ReactFlow, Background, Controls } from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
+
+const nodes = [
+  {
+    id: '1',
+    position: { x: 100, y: 100 },
+    data: { label: 'App Service' },
+    type: 'default',
+  },
+  {
+    id: '2',
+    position: { x: 400, y: 100 },
+    data: { label: 'Database' },
+    type: 'default',
+  },
+];
+
+const edges = [
+  {
+    id: 'e1-2',
+    source: '1',
+    target: '2',
+  },
+];
+
 export default function App() {
   return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-
-      {/* Header */}
-      <div style={{ padding: "12px 20px", borderBottom: "1px solid #ccc" }}>
-        <h2>App Graph Builder</h2>
-      </div>
-
-      {/* Main content */}
-      <div style={{ flex: 1, display: "flex" }}>
-
-        {/* Sidebar */}
-        <div
-          style={{
-            width: "220px",
-            borderRight: "1px solid #ccc",
-            padding: "10px",
-          }}
-        >
-          <h4>Components</h4>
-          <ul>
-            <li>Service</li>
-            <li>Database</li>
-            <li>Cache</li>
-          </ul>
-        </div>
-
-        {/* Canvas */}
-        <div
-          style={{
-            flex: 1,
-            margin: "10px",
-            border: "2px dashed #999",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#666",
-            fontSize: "18px",
-          }}
-        >
-          Canvas will come here
-        </div>
-      </div>
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <ReactFlow nodes={nodes} edges={edges}>
+        <Background />
+        <Controls />
+      </ReactFlow>
     </div>
   );
 }
