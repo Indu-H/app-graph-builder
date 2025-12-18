@@ -1,27 +1,31 @@
 # App Graph Builder – Reasoning
 
-This project is a basic implementation of an App Graph Builder interface.
+This project is a frontend implementation of an App Graph Builder using ReactFlow.
 
 ## Approach
-I started by setting up a React + Vite + TypeScript project to ensure fast development and type safety.
+I started by setting up a React + Vite + TypeScript (strict) project to ensure fast development, scalability, and type safety.
 
-The UI is divided into three main sections:
-1. A header showing the application title.
-2. A sidebar representing available components like services and databases.
-3. A central canvas area where the graph will be built in the future.
+The core focus of this task is the interactive canvas. ReactFlow is used to render nodes and edges, allowing a visual representation of application components and their relationships.
+
+## Implementation Details
+- A ReactFlow canvas is rendered as the main workspace.
+- Nodes such as **App Service** and **Database** are displayed on the canvas.
+- An edge connects the nodes to represent dependency/flow.
+- Built-in ReactFlow controls (zoom, pan, fit view) are enabled.
+- The layout is intentionally minimal to focus on clarity and interaction.
 
 ## Design Decisions
-- The canvas is represented as a placeholder to clearly indicate where graph interactions will happen.
-- The sidebar provides a conceptual idea of draggable components.
-- The layout is kept simple and readable to focus on structure and clarity.
+- ReactFlow was chosen to manage node positioning, connections, and canvas interactions cleanly.
+- Nodes and edges are defined using typed configurations for clarity and maintainability.
+- The structure is kept simple so additional node types and interactions can be added easily.
 
-## Future Improvements
-- Integrating ReactFlow to render interactive nodes and edges.
-- Managing graph state using Zustand.
-- Fetching and syncing data using TanStack Query.
-
-This implementation focuses on clean structure, clarity, and extensibility.
 ## Library Usage Note
 Zustand and TanStack Query are included as part of the required stack.  
-Given the limited scope and time constraints, the current implementation focuses on the core ReactFlow canvas.  
-The architecture is intentionally kept ready for integrating global state (Zustand) and server-driven data (TanStack Query) in future iterations.
+Given the limited scope of this task, the current implementation focuses on the ReactFlow canvas and graph rendering.  
+The project structure is intentionally designed to support global state management (Zustand) and async data handling (TanStack Query) in future iterations.
+
+## Future Improvements
+- Add draggable nodes from a sidebar.
+- Persist graph state using Zustand.
+- Sync graph data with an API using TanStack Query.
+- Enhance UI using shadcn/ui components.
